@@ -1,7 +1,7 @@
 {
     "private": false,
     "name": "dao-button",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "A nice, reusable free and multifunctional, responsive button component for VueJS.",
     "main": "./dist/index.js",
     "scripts": {
