@@ -10,7 +10,7 @@ This is the firs package I made for using with VueJS. In short, I was using this
 | Package size  | 3.2 kB      |
 | Unpacked size | 10.1 kB     |
 | Total files   | 3 files     |
-| Live version  | 0.0.2      |
+| Live version  | 0.0.3       |
 
 ### Installation
 ##### To add this package to your 
@@ -33,11 +33,24 @@ Vue.use(DaoBtn);
 
 ```html
 <dao-btn :rounded="true" color="red" size="large">My Button</dao-btn>
-````
+```
 
-#### Notes:
+##### Notes:
 
 Above ``--save`` while installation is to make sure if the button is installed and saved to **node_modules** folder.
 And don't forget to include the package as is above in the ``index.js`` or ``main.js`` file of your project.
 
+##### Coming soon/in the next versions
+
+- Upgrade to new style of component sharing
+- New designed button
+- Fix: round mode
+- Add: rounded, flat, square, line shadow modes
+- New: color, text-color, icon-bg, icon-color attributes
+- Sizes: xs, sm, md, lg, xl
+- Right side icon mode
+- Outlined mode
+- Block mode
+- Style and size and class attributes
+- Animations(if want to use)
 ### Have fun with DaoBtn 😄.
