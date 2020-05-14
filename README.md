@@ -8,9 +8,9 @@ This is the firs package I made for using with VueJS. In short, I was using this
 | ------------- | :---------- |
 | Package name  | dao-button  |
 | Package size  | 3.2 kB      |
-| Unpacked size | 8.9 kB      |
-| Total files   | 2 files     |
-| Live version  | 0.0.1       |
+| Unpacked size | 10.1 kB     |
+| Total files   | 3 files     |
+| Live version  | 0.0.2      |
 
 ### Installation
 ##### To add this package to your 
