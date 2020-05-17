@@ -1,5 +1,5 @@
 /*!
- * @dao-vue/button v0.0.1
+ * @dao-vue/button v0.0.2
  * (c) Otabek Sadiridinov
  * Released under the MIT License.
  */
@@ -23,37 +23,37 @@
 //
 //
 var script = {
-    props: {
-        color: {
-            type: String,
-            "default": "blue",
-            validator: function validator(x) {
-                return ["blue", "green", "red"].indexOf(x) !== -1;
-            }
-        },
-        rounded: {
-            type: Boolean,
-            "default": true
-        },
-        size: {
-            type: String,
-            "default": "default",
-            validator: function validator(x) {
-                return ["small", "default", "large"].indexOf(x) !== -1;
-            }
-        }
+  props: {
+    color: {
+      type: String,
+      "default": "blue",
+      validator: function validator(x) {
+        return ["blue", "green", "red"].indexOf(x) !== -1;
+      }
     },
-    methods: {
-        onClick: function onClick(event) {
-            this.$emit("click", event);
-        },
-        onDoubleClick: function onDoubleClick(event) {
-            this.$emit("dblclick", event);
-        }
+    rounded: {
+      type: Boolean,
+      "default": true
+    },
+    size: {
+      type: String,
+      "default": "default",
+      validator: function validator(x) {
+        return ["small", "default", "large"].indexOf(x) !== -1;
+      }
     }
+  },
+  methods: {
+    onClick: function onClick(event) {
+      this.$emit("click", event);
+    },
+    onDoubleClick: function onDoubleClick(event) {
+      this.$emit("dblclick", event);
+    }
+  }
 };
 
-function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */ , shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
+function normalizeComponent(template, style, script, scopeId, isFunctionalTemplate, moduleIdentifier /* server only */, shadowMode, createInjector, createInjectorSSR, createInjectorShadow) {
     if (typeof shadowMode !== 'boolean') {
         createInjectorSSR = createInjector;
         createInjector = shadowMode;
@@ -78,12 +78,12 @@ function normalizeComponent(template, style, script, scopeId, isFunctionalTempla
     let hook;
     if (moduleIdentifier) {
         // server build
-        hook = function(context) {
+        hook = function (context) {
             // 2.3 injection
             context =
                 context || // cached call
-                (this.$vnode && this.$vnode.ssrContext) || // stateful
-                (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext); // functional
+                    (this.$vnode && this.$vnode.ssrContext) || // stateful
+                    (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext); // functional
             // 2.2 with runInNewContext: true
             if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
                 context = __VUE_SSR_CONTEXT__;
@@ -100,13 +100,13 @@ function normalizeComponent(template, style, script, scopeId, isFunctionalTempla
         // used by ssr in case component is cached and beforeCreate
         // never gets called
         options._ssrRegister = hook;
-    } else if (style) {
-        hook = shadowMode ?
-
-            function(context) {
+    }
+    else if (style) {
+        hook = shadowMode
+            ? function (context) {
                 style.call(this, createInjectorShadow(context, this.$root.$options.shadowRoot));
-            } :
-            function(context) {
+            }
+            : function (context) {
                 style.call(this, createInjector(context));
             };
     }
@@ -118,7 +118,8 @@ function normalizeComponent(template, style, script, scopeId, isFunctionalTempla
                 hook.call(context);
                 return originalRender(h, context);
             };
-        } else {
+        }
+        else {
             // inject component registration as beforeCreate hook
             const existing = options.beforeCreate;
             options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
@@ -129,13 +130,11 @@ function normalizeComponent(template, style, script, scopeId, isFunctionalTempla
 
 const isOldIE = typeof navigator !== 'undefined' &&
     /msie [6-9]\\b/.test(navigator.userAgent.toLowerCase());
-
 function createInjector(context) {
     return (id, style) => addStyle(id, style);
 }
 let HEAD;
 const styles = {};
-
 function addStyle(id, css) {
     const group = isOldIE ? css.media || 'default' : id;
     const style = styles[group] || (styles[group] = { ids: new Set(), styles: [] });
@@ -149,8 +148,8 @@ function addStyle(id, css) {
             // http://stackoverflow.com/a/26603875
             code +=
                 '\n/*# sourceMappingURL=data:application/json;base64,' +
-                btoa(unescape(encodeURIComponent(JSON.stringify(css.map)))) +
-                ' */';
+                    btoa(unescape(encodeURIComponent(JSON.stringify(css.map)))) +
+                    ' */';
         }
         if (!style.element) {
             style.element = document.createElement('style');
@@ -167,7 +166,8 @@ function addStyle(id, css) {
             style.element.styleSheet.cssText = style.styles
                 .filter(Boolean)
                 .join('\n');
-        } else {
+        }
+        else {
             const index = style.ids.size - 1;
             const textNode = document.createTextNode(code);
             const nodes = style.element.childNodes;
@@ -186,33 +186,33 @@ var __vue_script__ = script;
 /* template */
 
 var __vue_render__ = function __vue_render__() {
-    var _vm = this;
+  var _vm = this;
 
-    var _h = _vm.$createElement;
+  var _h = _vm.$createElement;
 
-    var _c = _vm._self._c || _h;
+  var _c = _vm._self._c || _h;
 
-    return _c('button', {
-        "class": ['dao-btn', 'dao-btn--' + _vm.color, 'dao-btn--' + _vm.size, {
-            'dao-btn--rounded': _vm.rounded
-        }],
-        on: {
-            "click": _vm.onClick,
-            "dblclick": _vm.onDoubleClick
-        }
-    }, [_vm._t("default")], 2);
+  return _c('button', {
+    "class": ['dao-btn', 'dao-btn--' + _vm.color, 'dao-btn--' + _vm.size, {
+      'dao-btn--rounded': _vm.rounded
+    }],
+    on: {
+      "click": _vm.onClick,
+      "dblclick": _vm.onDoubleClick
+    }
+  }, [_vm._t("default")], 2);
 };
 
 var __vue_staticRenderFns__ = [];
 /* style */
 
 var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
-    if (!inject) return;
-    inject("data-v-688861c2_0", {
-        source: ".dao-btn{display:inline-block;outline:0;border:1px solid rgba(0,0,0,.1);color:#fff;font-weight:500;font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;user-select:none;cursor:pointer}.dao-btn--blue{background-color:#0194ef}.dao-btn--green{background-color:#1bb934}.dao-btn--red{background-color:#e1112c}.dao-btn--small{padding:8px 10px;border-radius:4px;font-size:12px;line-height:12px}.dao-btn--default{padding:12px 14px;border-radius:6px;font-size:14px;line-height:16px}.dao-btn--large{padding:16px 18px;border-radius:8px;font-size:16px;line-height:20px}.dao-btn--rounded{border-radius:60px}",
-        map: undefined,
-        media: undefined
-    });
+  if (!inject) return;
+  inject("data-v-688861c2_0", {
+    source: ".dao-btn{display:inline-block;outline:0;border:1px solid rgba(0,0,0,.1);color:#fff;font-weight:500;font-family:\"Helvetica Neue\",Helvetica,Arial,sans-serif;user-select:none;cursor:pointer}.dao-btn--blue{background-color:#0194ef}.dao-btn--green{background-color:#1bb934}.dao-btn--red{background-color:#e1112c}.dao-btn--small{padding:8px 10px;border-radius:4px;font-size:12px;line-height:12px}.dao-btn--default{padding:12px 14px;border-radius:6px;font-size:14px;line-height:16px}.dao-btn--large{padding:16px 18px;border-radius:8px;font-size:16px;line-height:20px}.dao-btn--rounded{border-radius:60px}",
+    map: undefined,
+    media: undefined
+  });
 };
 /* scoped */
 
@@ -228,17 +228,17 @@ var __vue_is_functional_template__ = false;
 
 /* style inject shadow dom */
 
-var __vue_component__ = /*#__PURE__*/ normalizeComponent({
-    render: __vue_render__,
-    staticRenderFns: __vue_staticRenderFns__
+var __vue_component__ = /*#__PURE__*/normalizeComponent({
+  render: __vue_render__,
+  staticRenderFns: __vue_staticRenderFns__
 }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__, __vue_module_identifier__, false, createInjector, undefined, undefined);
 
 var index = {
-    install: function install(Vue, options) {
-        // Let's register our component globally
-        // https://vuejs.org/v2/guide/components-registration.html
-        Vue.component("dao-btn", __vue_component__);
-    }
+  install: function install(Vue, options) {
+    // Let's register our component globally
+    // https://vuejs.org/v2/guide/components-registration.html
+    Vue.component("dao-btn", __vue_component__);
+  }
 };
 
 module.exports = index;
