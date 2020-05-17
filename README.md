@@ -6,24 +6,24 @@ This is the firs package I made for using with VueJS. In short, I was using this
 
 | Keyword       | Description |
 | ------------- | :---------- |
-| Package name  | dao-button  |
+| Package name  | @dao-vue/button  |
 | Package size  | 3.2 kB      |
 | Unpacked size | 10.1 kB     |
 | Total files   | 3 files     |
-| Live version  | 0.0.3       |
+| Live version  | 0.0.1       |
 
 ### Installation
 ##### To add this package to your 
 
 ```bash
-yarn add dao-button --save   # using yarn
-npm i --save dao-button      # using npm
+yarn add @dao-vue/button --save   # using yarn
+npm i --save @dao-vue/button      # using npm
 ```
 
 #####  Including in project
 
 ```js
-import DaoBtn from "dao-btn";
+import DaoBtn from "@dao-vue/button";
 import Vue from "vue";
 
 Vue.use(DaoBtn);
@@ -53,4 +53,5 @@ And don't forget to include the package as is above in the ``index.js`` or ``mai
 - Block mode
 - Style and size and class attributes
 - Animations(if want to use)
+
 ### Have fun with DaoBtn 😄.

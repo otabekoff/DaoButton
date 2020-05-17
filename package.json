@@ -1,11 +1,11 @@
 {
     "private": false,
-    "name": "dao-button",
-    "version": "0.0.3",
+    "name": "@dao-vue/button",
+    "version": "0.0.2",
     "description": "A nice, reusable free and multifunctional, responsive button component for VueJS.",
     "main": "./dist/index.js",
     "scripts": {
-        "dev": "vue serve DaoBtn.vue",
+        "dev": "vue serve src/DaoBtn.vue",
         "build": "bili --name index --plugin vue --vue.css false"
     },
     "files": [
@@ -16,7 +16,9 @@
         "url": "git+https://github.com/OtabekSadiridinov/DaoButton.git"
     },
     "keywords": [
-        "dao-button",
+        "@dao-vue/button",
+        "@dao-vue",
+        "@dao-vue/button",
         "vuejs-button-component",
         "button-dao"
     ],
